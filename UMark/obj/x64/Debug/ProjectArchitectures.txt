@@ -1,0 +1,2 @@
+C:\Users\85005\Desktop\UMark\UMark\UMark.csproj;x64
+C:\Users\85005\Desktop\UMark\UMarkLibrary\UMarkLibrary.csproj;x64
