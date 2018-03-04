@@ -4,8 +4,9 @@ namespace UMarkLibrary.Parse.Inlines
 {
     public class TextRunInline : MarkdownInline, ITextRunInline
     {
-        public TextRunInline(string markdownText) : base(MarkdownInlineType.TextRun) { Text = markdownText; }
+        public TextRunInline(string markdownText) : base(MarkdownInlineType.TextRun) { _text = markdownText; }
 
-        public string Text { get; set; }
+        private string _text;
+        public string Text => _text;
     }
 }

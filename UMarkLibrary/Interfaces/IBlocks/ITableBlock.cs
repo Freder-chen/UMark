@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using UMarkLibrary.Parse;
+using UMarkLibrary.Parse.Blocks;
 
 namespace UMarkLibrary.Interfaces.IBlocks
 {
     internal interface ITableBlock : IMarkdownBlock
     {
-        int Row { get; }
-        int Col { get; }
-        IList<MarkdownBlock> Blocks { get; }
+        IList<TableBlockItem> Items { get; }
     }
 }

@@ -2,6 +2,8 @@
 using System.Diagnostics;
 using UMarkLibrary.Display;
 using UMarkLibrary.Parse;
+using UMarkLibrary.Parse.Blocks;
+using UMarkLibrary.Parse.Inlines;
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -84,9 +86,9 @@ namespace UMarkLibrary
         private void OnPropertyChanged(DependencyObject d, DependencyProperty property)
         {
             if (MarkdownText == null || MarkdownText == "") return;
-            MarkdownDocument Document = new MarkdownDocument(MarkdownText);
+            MarkdownDocument document = MarkdownDocument.Parse(MarkdownText);
             XamlRenderer renderer = new XamlRenderer();
-            Content = renderer.Render(Document);
+            Content = renderer.Render(document);
         }
     }
 }

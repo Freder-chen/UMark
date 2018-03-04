@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UMarkLibrary.Interfaces;
-using Windows.UI.Xaml.Documents;
+﻿using UMarkLibrary.Interfaces;
 
 namespace UMarkLibrary.Parse
 {
@@ -12,20 +6,20 @@ namespace UMarkLibrary.Parse
     {
         Root,
         Paragraph,
-        Quote,
-        Code,
-        Header,
-        List,
-        ListItemBuilder,
-        HorizontalRule,
-        Table,
-        LinkReference,
+        Header,// #(1-6)、===、---
+        HorizontalRule,// ---、***
+        Quote, // >
+        Code,  // Four spaces or \t
+        List, // +、-、*、number.
+        //ListItemBuilder,
+        Table, // 表 | 1 | 2 | 3 |
+        LinkReference, // [name](url)
     };
 
     public abstract class MarkdownBlock : MarkdownElement, IMarkdownBlock
     {
-        public MarkdownBlockType Type { get { return _type; } }
         private MarkdownBlockType _type;
+        public MarkdownBlockType Type => _type;
 
         internal MarkdownBlock(MarkdownBlockType type)
         {

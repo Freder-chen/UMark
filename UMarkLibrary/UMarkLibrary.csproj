@@ -110,6 +110,7 @@
       <DependentUpon>MarkdownEditBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="Display\XamlRenderer.cs" />
+    <Compile Include="Helper\ParseBlocksHelper.cs" />
     <Compile Include="Interfaces\IBlocks\ICodeBlock.cs" />
     <Compile Include="Interfaces\IBlocks\IHeaderBlock.cs" />
     <Compile Include="Interfaces\IBlocks\IHorizontalRuleBlock.cs" />
@@ -123,9 +124,14 @@
     <Compile Include="Interfaces\IBlocks\IParagraphBlock.cs" />
     <Compile Include="Interfaces\IMarkdownElement.cs" />
     <Compile Include="Interfaces\IMarkdownInline.cs" />
+    <Compile Include="Parse\Blocks\CodeBlock.cs" />
     <Compile Include="Parse\Blocks\HeaderBlock.cs" />
+    <Compile Include="Parse\Blocks\HorizontalRuleBlock.cs" />
     <Compile Include="Parse\Blocks\ListBlock.cs" />
     <Compile Include="Parse\Blocks\ParagraphBlock.cs" />
+    <Compile Include="Helper\Common.cs" />
+    <Compile Include="Parse\Blocks\QuoteBlock.cs" />
+    <Compile Include="Parse\Blocks\TableBlock.cs" />
     <Compile Include="Parse\Inlines\TextRunInline.cs" />
     <Compile Include="Parse\MarkdownBlock.cs" />
     <Compile Include="Parse\MarkdownDocument.cs" />

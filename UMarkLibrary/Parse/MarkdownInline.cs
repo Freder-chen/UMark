@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UMarkLibrary.Interfaces;
-using Windows.UI.Xaml.Documents;
+﻿using UMarkLibrary.Interfaces;
 
 namespace UMarkLibrary.Parse
 {
@@ -23,8 +17,8 @@ namespace UMarkLibrary.Parse
 
     public abstract class MarkdownInline : MarkdownElement, IMarkdownInline
     {
-        public MarkdownInlineType Type { get { return _type; } }
         private MarkdownInlineType _type;
+        public MarkdownInlineType Type => _type;
 
         internal MarkdownInline(MarkdownInlineType type)
         {

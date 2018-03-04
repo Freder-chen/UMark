@@ -1,39 +1,51 @@
 ﻿using System;
 using System.Collections.Generic;
+using UMarkLibrary.Helper;
 using UMarkLibrary.Interfaces.IBlocks;
-using UMarkLibrary.Parse.Inlines;
 
 namespace UMarkLibrary.Parse.Blocks
 {
     public class HeaderBlock : MarkdownBlock, IHeaderBlock
     {
-        public HeaderBlock(string markdownText) : base(MarkdownBlockType.Header) { Parse(markdownText); }
+        public HeaderBlock() : base(MarkdownBlockType.Header) { }
+        public int HeaderLevel { get; set; }
+        public IList<MarkdownInline> Inlines { get; set; }
 
-        private int _headerLevel;
-        public int HeaderLevel { get { return _headerLevel; } }
-
-        private IList<MarkdownInline> _inlines;
-        public IList<MarkdownInline> Inlines => _inlines;
-
-        private void Parse(string markdownText)
+        internal static HeaderBlock Parse(string markdownText, int start, int end, out int actualEnd)
         {
-            _inlines = ParseInlines(markdownText, 0, markdownText.Length);
+            int headerLevel = GetHeaderLevel(markdownText, start, end, out int textStart);
+            if (headerLevel == 0 || 
+                textStart > end  || 
+                markdownText[textStart] == '\r' ||
+                markdownText[textStart] == '\n')
+            {
+                actualEnd = start;
+                return null;
+            }
+            actualEnd = ParseBlocksHelper.FindLineEnd(markdownText, textStart, end);
+            return new HeaderBlock
+            {
+                HeaderLevel = headerLevel,
+                Inlines = Common.ParseInlines(markdownText, textStart, actualEnd),
+            };
         }
 
-        private IList<MarkdownInline> ParseInlines(string markdownText, int start, int end)
+        private static int GetHeaderLevel(string markdownText, int start, int end, out int pos)
         {
-            var inlines = new List<MarkdownInline>();
-            int pos = start;
-            while (pos < end && markdownText[pos] == '#' && pos - start < 6)
+            // Parse header sigh.
+            pos = start;
+            while (pos < end && markdownText[pos] == '#' && pos < 6)
                 pos++;
-            _headerLevel = pos - start;
-
-            if (_headerLevel == 0) return null;
-            string inlineText = markdownText.Substring(pos, end - pos);
-            if (inlineText.Length > 0)
-                inlines.Add(new TextRunInline(inlineText));
-
-            return inlines;
+            int headerLevel = pos;
+            if (headerLevel < 0 || headerLevel > 6)
+            {
+                pos = start;
+                return 0;
+            }
+            // Judge whether there is space.
+            if (pos <= end && markdownText[pos] == ' ')
+                pos++;
+            return headerLevel;
         }
     }
 } 
