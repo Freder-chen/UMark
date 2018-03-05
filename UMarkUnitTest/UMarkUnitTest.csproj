@@ -97,6 +97,7 @@
   <ItemGroup>
     <Compile Include="Parse\HeaderBlockTest.cs" />
     <Compile Include="Parse\HorizontalRuleBlockTest.cs" />
+    <Compile Include="Parse\ListBlockText.cs" />
     <Compile Include="Parse\ParagraphBlockTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTestApp.xaml.cs">

@@ -10,6 +10,7 @@ namespace UMarkLibrary.Parse
         HorizontalRule,// ---、***
         Quote, // >
         Code,  // Four spaces or \t
+        ListElement,
         List, // +、-、*、number.
         //ListItemBuilder,
         Table, // 表 | 1 | 2 | 3 |

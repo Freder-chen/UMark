@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UMarkLibrary.Parse;
 using UMarkLibrary.Parse.Blocks;
 using UMarkLibrary.Parse.Inlines;
+using Windows.UI.Text;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Documents;
@@ -39,6 +40,9 @@ namespace UMarkLibrary
                     case MarkdownBlockType.Header:
                         RenderHeader((HeaderBlock)block, blockUIElementCollection);
                         break;
+                    case MarkdownBlockType.ListElement:
+                        RenderListElement((ListElement)block, blockUIElementCollection);
+                        break;
                 }
             }
 
@@ -56,19 +60,64 @@ namespace UMarkLibrary
                 switch(block.HeaderLevel)
                 {
                     case 1:
-                    case 2:
-                    case 3:
-                    case 4:
-                    case 5:
-                    case 6:
-                        // paragraph.Margin = Header1Margin;
-                        paragraph.FontSize = 40;
-                        // paragraph.FontWeight = Header1FontWeight;
+                        paragraph.FontSize = 20;
+                        paragraph.FontWeight = FontWeights.Bold;
                         break;
+                    case 2:
+                        paragraph.FontSize = 20;
+                        break;
+                    case 3:
+                        paragraph.FontSize = 17;
+                        paragraph.FontWeight = FontWeights.Bold;
+                        break;
+                    case 4:
+                        paragraph.FontSize = 17;
+                        break;
+                    case 5:
+                        paragraph.FontSize = 15;
+                        break;
+                    case 6:
+                    default:
+                        paragraph.FontWeight = FontWeights.Bold;
+                    break;
                 }
                 RenderInlines(block.Inlines, paragraph.Inlines);
                 var textBlock = CreateOrReuseRichTextBlock(blockUIElementCollection);
                 textBlock.Blocks.Add(paragraph);
+            }
+
+            private void RenderListElement(ListElement block, UIElementCollection blockUIElementCollection)
+            {
+                Grid grid = new Grid();
+                grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Auto) });
+                grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
+
+                grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+                var bullet = CreateTextBlock();
+                switch (block.Style)
+                {
+                    case ListStyle.Bulleted:
+                        bullet.Text = "•";
+                        break;
+                    case ListStyle.Numbered:
+                        bullet.Text = "•";
+                        //bullet.Text = $"{rowIndex + 1}.";
+                        break;
+                }
+                // Add the list item bullet.
+                bullet.HorizontalAlignment = HorizontalAlignment.Right;
+                bullet.Margin = new Thickness(0, 0, 10, 0);
+                Grid.SetColumn(bullet, 0);
+                grid.Children.Add(bullet);
+                // Add the list item content.
+                var content = new RichTextBlock();
+                var paragraph = new Paragraph();
+                RenderInlines(block.Inlines, paragraph.Inlines);
+                content.Blocks.Add(paragraph);
+                Grid.SetColumn(content, 1);
+                grid.Children.Add(content);
+
+                blockUIElementCollection.Add(grid);
             }
 
             #endregion Block
@@ -99,6 +148,12 @@ namespace UMarkLibrary
             }
 
             #endregion Inline
+
+            private TextBlock CreateTextBlock()
+            {
+                var result = new TextBlock();
+                return result;
+            }
 
             private static RichTextBlock CreateOrReuseRichTextBlock(UIElementCollection blockUIElementCollection)
             {

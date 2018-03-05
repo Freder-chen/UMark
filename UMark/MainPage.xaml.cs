@@ -18,7 +18,7 @@ namespace UMark
 
         private void Editor_Loaded(object sender, RoutedEventArgs e)
         {
-            TextBlock.MarkdownText = "# Hello\r\n* Hahaha";
+            TextBlock.MarkdownText = "# Hello\r\n* Hahaha\r\n* List2\r\n";
         }
     }
 }

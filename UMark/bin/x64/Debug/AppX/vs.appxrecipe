@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\85005\Desktop\UMark\UMark\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-04T15:24:30.026</Modified>
+      <Modified>2018-03-05T08:17:40.644</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\85005\Desktop\UMark\UMark\bin\x64\Debug\UMark.exe">
       <PackagePath>entrypoint\UMark.exe</PackagePath>
-      <Modified>2018-03-04T15:24:29.620</Modified>
+      <Modified>2018-03-05T08:17:39.573</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\85005\.nuget\packages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -497,7 +497,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\85005\Desktop\UMark\UMarkLibrary\bin\x64\Debug\UMarkLibrary.dll">
       <PackagePath>UMarkLibrary.dll</PackagePath>
-      <Modified>2018-03-04T15:24:27.410</Modified>
+      <Modified>2018-03-05T08:14:41.235</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\85005\Desktop\UMark\UMark\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -556,7 +556,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\85005\Desktop\UMark\UMark\bin\x64\Debug\Core\UMark.exe">
       <PackagePath>UMark.exe</PackagePath>
-      <Modified>2018-03-04T15:24:30.026</Modified>
+      <Modified>2018-03-05T08:17:40.638</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

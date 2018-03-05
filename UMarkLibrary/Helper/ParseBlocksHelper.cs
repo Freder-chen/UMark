@@ -28,6 +28,9 @@ namespace UMarkLibrary.Helper
             if (block == null && (nonSpaceChar == '*' || nonSpaceChar == '-' || nonSpaceChar == '_'))
                 block = HorizontalRuleBlock.Parse(markdownText, start, end, out actualEnd);
 
+            if (block == null && (nonSpaceChar == '*' || nonSpaceChar == '+' || nonSpaceChar == '-' || (nonSpaceChar >= '0' && nonSpaceChar <= '9')))
+                block = ListElement.Parse(markdownText, start, end, out actualEnd);
+
             if (block == null)
                 block = ParagraphBlock.Parse(markdownText, start, end, out actualEnd);
 

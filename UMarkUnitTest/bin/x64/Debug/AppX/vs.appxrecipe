@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\85005\Desktop\UMark\UMarkUnitTest\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-04T08:31:46.672</Modified>
+      <Modified>2018-03-05T08:16:49.925</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\85005\Desktop\UMark\UMarkUnitTest\bin\x64\Debug\UMarkUnitTest.exe">
       <PackagePath>entrypoint\UMarkUnitTest.exe</PackagePath>
-      <Modified>2018-03-04T08:31:45.565</Modified>
+      <Modified>2018-03-05T08:16:48.751</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\TestPlatform.Universal\15.0\References\CommonConfiguration\neutral\Microsoft.VisualStudio.TestPlatform.TestExecutor.Core.dll">
       <PackagePath>Microsoft.VisualStudio.TestPlatform.TestExecutor.Core.dll</PackagePath>
@@ -509,7 +509,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\85005\Desktop\UMark\UMarkLibrary\bin\x64\Debug\UMarkLibrary.dll">
       <PackagePath>UMarkLibrary.dll</PackagePath>
-      <Modified>2018-03-04T08:28:14.811</Modified>
+      <Modified>2018-03-05T08:14:41.235</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\TestPlatform.Universal\15.0\Redist\CommonConfiguration\neutral\Microsoft.VisualStudio.TestPlatform.Common.dll">
       <PackagePath>Microsoft.VisualStudio.TestPlatform.Common.dll</PackagePath>
@@ -600,11 +600,11 @@
     <AppxPackagedFile Include="C:\Users\85005\Desktop\UMark\UMarkUnitTest\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-04T06:56:35.460</Modified>
+      <Modified>2018-03-05T06:20:42.011</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\85005\Desktop\UMark\UMarkUnitTest\bin\x64\Debug\Core\UMarkUnitTest.exe">
       <PackagePath>UMarkUnitTest.exe</PackagePath>
-      <Modified>2018-03-04T08:31:46.667</Modified>
+      <Modified>2018-03-05T08:16:49.921</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

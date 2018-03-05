@@ -27,6 +27,8 @@ namespace UMarkUnitTest
                     text += GetInlinsText(((HeaderBlock)block).Inlines);
                 else if (block is HorizontalRuleBlock)
                     text += "---\r\n";
+                else if (block is ListElement)
+                    text += GetInlinsText(((ListElement)block).Inlines);
             }
             return text;
         }
